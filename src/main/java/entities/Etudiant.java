@@ -1,5 +1,7 @@
 package entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -8,6 +10,7 @@ public class Etudiant {
     private String identifiant;
     private String nom;
     private String prenom;
+    @JsonProperty
     private Option option;
     private int anneeEtude;
     private String email;
