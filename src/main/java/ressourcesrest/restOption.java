@@ -50,7 +50,7 @@ public class restOption {
    @Path("{code}")
    @Consumes(MediaType.APPLICATION_JSON)
    public Response updateOption(@PathParam("code") int code, Option op) {
-      if (opB.updateOption(code, op)) {
+      if (op != null && opB.updateOption(code, op)) {
          return Response.status(Response.Status.OK).build();
       }
       return Response.status(Response.Status.NOT_FOUND).build();

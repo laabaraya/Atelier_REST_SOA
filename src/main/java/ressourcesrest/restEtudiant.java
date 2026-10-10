@@ -59,7 +59,7 @@ public class restEtudiant {
     @Path("{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response updateEtudiant(@PathParam("id") String id, Etudiant e) {
-        if (etB.updateEtudiant(id, e)) {
+        if (e != null && etB.updateEtudiant(id, e)) {
             return Response.status(Response.Status.OK).build();
         }
         return Response.status(Response.Status.NOT_FOUND).build();
